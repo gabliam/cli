@@ -46,7 +46,11 @@
   ],
   "homepage": "https://github.com/gabliam/cli",
   "keywords": [
-    "oclif"
+    "gabliam",
+    "Gabliam CLI",
+    "devkit",
+    "sdk",
+    "Gabliam DevKit"
   ],
   "license": "MIT",
   "main": "lib/index.js",
