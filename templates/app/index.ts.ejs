@@ -1,0 +1,19 @@
+import 'reflect-metadata';
+import { Gabliam } from '@gabliam/core';
+import * as path from 'path';<% pluginsBootstrap.forEach(function(plugin) { %>
+<%- 'import ' + plugin.name + ' from \'' + plugin.importPath + '\';'; -%>
+<% }); %>
+
+const bootstrap = async () => {
+  return new Gabliam({
+    scanPath: __dirname,
+    config: path.resolve(__dirname, './config')
+  })<% if (pluginsBootstrap.length) { %>
+    .addPlugins(<% pluginsBootstrap.forEach(function(plugin) { %>
+      <%- plugin.name + ',' -%>
+    <% }); %>
+    )<% } %>
+    .buildAndStart();
+};
+
+bootstrap();

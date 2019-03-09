@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+coverage
+.test_gen_*
+lib/
+*.log
+coverage_jest_raw
+*.sqlite
+lol/
+uploads/
+examples/express-passport/config/test.json
