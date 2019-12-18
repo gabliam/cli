@@ -1,7 +1,7 @@
-import { execSync } from 'child_process';
-import * as path from 'path';
-import * as Generator from 'yeoman-generator';
 import chalk from 'chalk';
+import { execSync } from 'child_process';
+import path from 'path';
+import Generator from 'yeoman-generator';
 const sortPjson = require('sort-pjson');
 
 const GABLIAM_VERSION = 'latest';
@@ -36,7 +36,7 @@ class App extends Generator {
   projectPath: string;
   yarn: boolean;
   projectName: string;
-  pluginsBootstrap: ({ name: string; importPath: string })[] = [];
+  pluginsBootstrap: { name: string; importPath: string }[] = [];
   pluginsInstall: string[] = [];
 
   constructor(args: any, opts: any) {
@@ -56,7 +56,7 @@ class App extends Generator {
         watch:
           // tslint:disable-next-line:max-line-length
           'TS_NODE_FILES=true nodemon --watch \'src/**/*.ts\' --watch \'index.ts\' --ignore \'src/**/*.spec.ts\' --exec \'ts-node\' --type-check index.ts',
-        build: 'tsc'
+        build: 'tsc',
       },
       engines: {},
       files: ['lib', 'index.js', 'index.d.ts'],
@@ -166,7 +166,7 @@ class App extends Generator {
           { name: 'Amqp', value: 'amqp' },
           { name: 'Graphql', value: 'graphql' },
         ],
-        when: response => response.installPlugin,
+        when: (response: any) => response.installPlugin,
       },
       {
         name: 'webType',
@@ -176,7 +176,7 @@ class App extends Generator {
           { name: 'express', value: 'express' },
           { name: 'koa', value: 'koa' },
         ],
-        when: response =>
+        when: (response: any) =>
           response.installPlugin &&
           (response.plugins.includes('rest') ||
             response.plugins.includes('graphql')),

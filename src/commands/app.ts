@@ -1,8 +1,8 @@
 import { Command } from '@oclif/command';
-import { createEnv } from 'yeoman-environment';
+import chalk from 'chalk';
 import * as fs from 'fs-extra';
 import * as path from 'path';
-import chalk from 'chalk';
+import { createEnv } from 'yeoman-environment';
 
 export default class App extends Command {
   static description = 'describe the command here';
@@ -23,10 +23,12 @@ export default class App extends Command {
 
     const projectPath = path.resolve(process.cwd(), args.name);
 
-    if (!await fs.pathExists(projectPath)) {
+    if (!(await fs.pathExists(projectPath))) {
       await fs.mkdir(projectPath);
     } else {
-      console.log(chalk.red(`${args.name} exist. Please choose another project name.`));
+      console.log(
+        chalk.red(`${args.name} exist. Please choose another project name.`)
+      );
       process.exit(1);
     }
 
@@ -37,7 +39,7 @@ export default class App extends Command {
         `gabliam:app`,
         {
           projectPath,
-          projectName: args.name
+          projectName: args.name,
         },
         (err: Error, results: any) => {
           if (err) {

@@ -19,6 +19,7 @@
     "importHelpers": true,
     "strictPropertyInitialization": false,
     "strictBindCallApply": false,
+    "esModuleInterop": true,
     "composite": true
   },
   "include": [
