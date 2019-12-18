@@ -19,7 +19,7 @@ $ npm install -g @gabliam/cli
 $ gab COMMAND
 running command...
 $ gab (-v|--version|version)
-@gabliam/cli/1.0.0 darwin-x64 node-v10.15.0
+@gabliam/cli/1.0.1 darwin-x64 node-v12.13.0
 $ gab --help [COMMAND]
 USAGE
   $ gab COMMAND
@@ -46,7 +46,7 @@ EXAMPLE
   $ gab app
 ```
 
-_See code: [src/commands/app.ts](https://github.com/gabliam/cli/blob/v1.0.0/src/commands/app.ts)_
+_See code: [src/commands/app.ts](https://github.com/gabliam/cli/blob/v1.0.1/src/commands/app.ts)_
 
 ## `gab help [COMMAND]`
 
@@ -63,5 +63,5 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
 <!-- commandsstop -->
