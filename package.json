@@ -1,7 +1,7 @@
 {
   "name": "@gabliam/cli",
   "description": "Gabliam cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "eyolas @eyolas",
   "bin": {
     "gab": "./bin/run"
