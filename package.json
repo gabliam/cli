@@ -63,7 +63,7 @@
   },
   "repository": "gabliam/cli",
   "scripts": {
-    "build": "rimraf lib && tsc -b tsconfig.json",
+    "build": "rimraf tsconfig.tsbuildinfo && rimraf lib  && tsc -b tsconfig.json",
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "prepack": "oclif-dev manifest && oclif-dev readme",

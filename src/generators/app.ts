@@ -52,10 +52,8 @@ class App extends Generator {
 
     this.pjson = {
       scripts: {
-        start: 'TS_NODE_FILES=true ts-node --type-check index.ts',
-        watch:
-          // tslint:disable-next-line:max-line-length
-          'TS_NODE_FILES=true nodemon --watch \'src/**/*.ts\' --watch \'index.ts\' --ignore \'src/**/*.spec.ts\' --exec \'ts-node\' --type-check index.ts',
+        start: 'gab start',
+        watch: `nodemon -e ts --watch 'src/**/*.ts' --watch 'index.ts' --ignore 'src/**/*.spec.ts' --exec gabliam start`,
         build: 'tsc',
       },
       engines: {},
@@ -317,20 +315,22 @@ class App extends Generator {
 
   install() {
     const dependencies = [
-      '@gabliam/tslint@^1.0.2',
       `@gabliam/core@${GABLIAM_VERSION}`,
-      `@gabliam/log4js@${GABLIAM_VERSION}`,
-      '@types/node@^10.12.21',
-      'nodemon@^1.18.9',
-      'ts-node@^8.0.2',
-      'tslint@^5.12.1',
-      'typescript@^3.2.4',
+      `@gabliam/log4js@${GABLIAM_VERSION}`
     ];
 
     if (this.pluginsInstall.length) {
       dependencies.push(...this.pluginsInstall);
     }
-    const devDependencies = ['reflect-metadata@^0.1.13'];
+    const devDependencies = [
+      '@gabliam/tslint@^1.0.2',
+      '@types/node@^10.12.21',
+      'reflect-metadata@^0.1.13',
+      'nodemon@^1.18.9',
+      'ts-node@^8.0.2',
+      'tslint@^5.12.1',
+      'typescript@^3.2.4',
+    ];
 
     const yarnOpts = {} as any;
     if (process.env.YARN_MUTEX) {
