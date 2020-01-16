@@ -52,7 +52,7 @@ class App extends Generator {
 
     this.pjson = {
       scripts: {
-        start: 'gab start',
+        start: 'gabliam start',
         watch: `nodemon -e ts --watch 'src/**/*.ts' --watch 'index.ts' --ignore 'src/**/*.spec.ts' --exec gabliam start`,
         build: 'tsc',
       },
