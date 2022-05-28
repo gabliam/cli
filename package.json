@@ -13,7 +13,7 @@
     "@oclif/plugin-help": "^2.2.3",
     "chalk": "^3.0.0",
     "execa": "^3.4.0",
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.0",
     "sort-pjson": "^1.0.3",
     "tslib": "^1.10.0",
     "yeoman-environment": "^2.7.0",
